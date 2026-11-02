@@ -10,10 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "고백빈 | PM 포트폴리오",
     description: "데이터 기반 서비스 기획 · PM 포트폴리오",
-    images: ["/slides/comento/01.webp"],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "고백빈 포트폴리오" }],
     locale: "ko_KR",
     type: "website",
   },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };

@@ -15,7 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${p.nav.name} | 고백빈 포트폴리오`,
     description: p.sub,
-    openGraph: { images: [slidePath(p.slug, 1)] },
   };
 }
 
