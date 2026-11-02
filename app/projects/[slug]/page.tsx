@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Slider from "@/components/Slider";
@@ -32,9 +31,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <div className="tint">
         <div className="wrap wrap-d detail-head">
-          <Link href="/#work" className="back-pill">
+          <a href="/#work" className="back-pill">
             <Arrow dir="left" size={14} /> 대표 프로젝트 목록
-          </Link>
+          </a>
           <p className="eyebrow">{p.eyebrow}</p>
           <h1>
             {p.headline.map((l) => (
@@ -168,30 +167,30 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <nav className="pn" aria-label="다른 프로젝트">
           <div className="pn-col">
             {prev && (
-              <Link href={`/projects/${prev.slug}`} className="pn-link">
+              <a href={`/projects/${prev.slug}`} className="pn-link">
                 <span className="pn-dir">
                   <Arrow dir="left" size={14} /> 이전 프로젝트
                 </span>
                 <strong>{prev.nav.name}</strong>
                 <span>{prev.nav.desc}</span>
-              </Link>
+              </a>
             )}
           </div>
           <div className="pn-col pn-right">
             {next && (
-              <Link href={`/projects/${next.slug}`} className="pn-link">
+              <a href={`/projects/${next.slug}`} className="pn-link">
                 <span className="pn-dir">
                   다음 프로젝트 <Arrow size={14} />
                 </span>
                 <strong>{next.nav.name}</strong>
                 <span>{next.nav.desc}</span>
-              </Link>
+              </a>
             )}
           </div>
         </nav>
-        <Link href="/#work" className="all-link">
+        <a href="/#work" className="all-link">
           전체 프로젝트 목록 <Arrow size={14} />
-        </Link>
+        </a>
       </div>
 
       <footer className="detail-foot">

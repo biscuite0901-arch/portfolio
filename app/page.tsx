@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Arrow, Rich } from "@/components/Rich";
 import { hero, howIWork, profile, projects, recognition, site, skills, slidePath } from "@/lib/data";
 
@@ -126,9 +125,9 @@ export default function Home() {
           <div className="works">
             {featured.map((p, i) => (
               <article key={p.slug} className="work">
-                <Link href={`/projects/${p.slug}`} className="work-thumb" aria-label={`${p.card.title} 자세히 보기`}>
+                <a href={`/projects/${p.slug}`} className="work-thumb" aria-label={`${p.card.title} 자세히 보기`}>
                   <img src={slidePath(p.slug, 1)} alt="" width={1920} height={1080} loading={i ? "lazy" : "eager"} />
-                </Link>
+                </a>
                 <div className="work-body">
                   <div className="work-top">
                     <span className="num-sm">{pad(i + 1)}</span>
@@ -162,9 +161,9 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/projects/${p.slug}`} className="btn-pill">
+                  <a href={`/projects/${p.slug}`} className="btn-pill">
                     자세히 보기 <Arrow size={14} />
-                  </Link>
+                  </a>
                 </div>
               </article>
             ))}
@@ -182,7 +181,7 @@ export default function Home() {
           </div>
           <div className="split-body rule-top">
             {more.map((p) => (
-              <Link key={p.slug} href={`/projects/${p.slug}`} className="more-row">
+              <a key={p.slug} href={`/projects/${p.slug}`} className="more-row">
                 <img src={slidePath(p.slug, 1, true)} alt="" width={240} height={135} loading="lazy" />
                 <div>
                   <span className="more-date">{p.card.moreDate}</span>
@@ -194,7 +193,7 @@ export default function Home() {
                     <path d="M9 6l6 6-6 6" />
                   </svg>
                 </span>
-              </Link>
+              </a>
             ))}
           </div>
         </section>
