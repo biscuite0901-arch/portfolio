@@ -86,7 +86,9 @@ strong { font-weight: 700; }
 .keyword > span:last-child { font-size: 14.5px; color: var(--muted); }
 
 /* ---------- split sections ---------- */
-.split { display: grid; grid-template-columns: minmax(0, 370px) minmax(0, 1fr); gap: 24px 0; }
+.split { display: grid; grid-template-columns: minmax(0, 384px) minmax(0, 1fr); gap: 24px 0; }
+/* 왼쪽 칸 제목이 줄바꿈되지 않도록 칸 너비에 맞춰 크기를 줄입니다 */
+.split .display { font-size: clamp(38px, 4.1vw, 58px); white-space: nowrap; padding-right: 24px; }
 .profile-row {
   display: grid; grid-template-columns: 118px minmax(0, 1fr) auto; gap: 8px 16px;
   padding: 26px 0; border-bottom: 1px solid var(--line);
