@@ -1,5 +1,16 @@
 // 슬라이더(화살표·썸네일·키보드·스와이프·원본 크기)와 '맨 위로' 버튼 동작
 (function () {
+  // 페이지를 열면 항상 맨 위에서 시작 (#work 같은 위치 지정 링크는 예외)
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  function toTop() {
+    if (location.hash) {
+      var t = document.getElementById(location.hash.slice(1));
+      if (t) { t.scrollIntoView({ behavior: "instant" }); return; }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }
+  toTop();
+  window.addEventListener("pageshow", toTop);
   function pad(n) { return String(n).padStart(2, "0"); }
 
   document.querySelectorAll("[data-slider]").forEach(function (root) {
